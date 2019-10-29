@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "holberton.h"
 #include <stdarg.h>
-
+#include <unistd.h>
 
 /**
  * _putchar - prints given character
@@ -24,19 +24,19 @@ int _putchar(char c)
 
 int op_string(va_list form)
 {
-	int lenght;
+	int lenghts;
 	char *str = va_arg(form, char *);
 
 	if (str == NULL)
 	{
 		str = "(null)";
 	}
-	lenght = 0;
-	while (str[lenght])
+	lenghts = 0;
+	while (str[lenghts])
 	{
-		lenght += _putchar(str[lenght]);
+		lenghts += _putchar(str[lenghts]);
 	}
-	return (lenght);
+	return (lenghts);
 }
 /**
  * op_character - print character
@@ -47,10 +47,10 @@ int op_string(va_list form)
 
 int op_character(va_list form)
 {
-	int lenght;
+	int lenghtc = 0;
 
-	lenght += _putchar(va_arg(form, int));
-	return (lenght);
+	lenghtc = _putchar(va_arg(form, int));
+	return (lenghtc);
 }
 
 
@@ -65,12 +65,12 @@ int op_integer(va_list form)
 {
 	int integer = va_arg(form, int);
 	int div = 1;
-	int lenght = 0;
+	int lenghti = 0;
 	unsigned int number;
 
 	if (integer < 0)
 	{
-		lenght += _putchar('-');
+		lenghti += _putchar('-');
 		number = integer * -1;
 	}
 	else
@@ -81,10 +81,10 @@ int op_integer(va_list form)
 
 	while (div != 0)
 	{
-		lenght += _putchar('0' + number / div);
+		lenghti += _putchar('0' + number / div);
 		number %= div;
 		div /= 10;
 	}
 
-	return (lenght);
+	return (lenghti);
 }
