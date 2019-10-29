@@ -23,7 +23,7 @@ int validator(const char *format, va_list print1, MyPrint *ops1)
 				while (format[i + 1] == ' ')
 				i++;
 			}
-			while (j < 4)
+			while (j < 5)
 			{
 				if (ops1[j].op[0] == format[i + 1])
 				{
@@ -33,7 +33,8 @@ int validator(const char *format, va_list print1, MyPrint *ops1)
 				} j++;
 			}
 		}
-		else if (format[i] == '%' && format[i + 1] == '%')
+		else if (format[i] == '%' && (format[i + 1] == '%' ||
+					      format[i + 1]))
 		{
 			count += _putchar('%');
 			i++;
@@ -62,6 +63,7 @@ int _printf(const char *format, ...)
 		{"s", op_string},
 		{"i", op_integer},
 		{"d", op_integer},
+		{"r", op_reverse},
 	};
 
 	if (format == NULL)
