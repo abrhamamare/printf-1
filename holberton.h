@@ -1,6 +1,8 @@
 #ifndef PRINTF_H
 #define PRINTF_H
 
+#include <stdarg.h>
+
 int _printf(const char *format, ...);
 /**
  * struct format - Data type of a format.
@@ -12,7 +14,13 @@ int _printf(const char *format, ...);
 typedef struct format
 {
 	char *op;
-	void (*f)(va_list all);
+	int (*f)(va_list print);
 } MyPrint;
+
+int _putchar(char c);
+int op_character(va_list form);
+int op_string(va_list form);
+int op_integer(va_list form);
+
 
 #endif
