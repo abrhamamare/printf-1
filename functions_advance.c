@@ -16,9 +16,6 @@ int op_rot13(va_list form)
 	int i, j;
 	char *s = va_arg(form, char *);
 
-	if (s)
-		return (0);
-
 	char x[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ ";
 	char y[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM ";
 
