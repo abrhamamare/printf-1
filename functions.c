@@ -14,7 +14,6 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-
 /**
  * op_string - Print Integer
  * @form: name va_list
