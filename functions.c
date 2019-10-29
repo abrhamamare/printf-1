@@ -59,7 +59,7 @@ int  op_reverse(va_list form)
 		_putchar(str[i]);
 		i--;
 	}
-	return(lenghtr);
+	return (lenghtr);
 }
 /**
  * op_character - print character
