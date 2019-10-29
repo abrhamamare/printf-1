@@ -39,6 +39,30 @@ int op_string(va_list form)
 	return (lenghts);
 }
 /**
+ * op_reverse - print character
+ * @form: name of va_list
+ *
+ * Return: Nothing.
+ */
+int  op_reverse(va_list form)
+{
+	int i = 0, lenghtr = 0;
+	char *str = va_arg(form, char *);
+
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	lenghtr = i;
+	i--;
+	while (i >= 0)
+	{
+		_putchar(str[i]);
+		i--;
+	}
+	return(lenghtr);
+}
+/**
  * op_character - print character
  * @form: name of va_list
  *
