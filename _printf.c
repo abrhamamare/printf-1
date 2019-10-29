@@ -1,11 +1,15 @@
-#include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
+#include "holberton.h"
 
 /**
  * _printf - Function that produces output according to a format.
- * @format: Pointer to string input
- * Return: Always 0
+ * @format: Is a character string.
+ * The format string is composed of zero or more directives.
+ * Returns: the number of characters printed
+ * (excluding the null byte used to end output to strings)
  */
 int _printf(const char *format, ...)
 {
