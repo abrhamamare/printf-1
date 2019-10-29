@@ -17,6 +17,7 @@ typedef struct format
 	int (*f)(va_list print);
 } MyPrint;
 
+
 int _putchar(char c);
 int op_character(va_list form);
 int op_string(va_list form);
