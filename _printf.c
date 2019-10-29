@@ -1,6 +1,6 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include "holberton.h"
 
 /**
  * validator - Function that produces output according to a format.
