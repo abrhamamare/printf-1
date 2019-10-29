@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-
-
 /**
  * validator - Function that produces output according to a format.
  * @format: Pointer
@@ -18,7 +16,7 @@ int validator(const char *format, va_list print1, MyPrint *ops1)
 	while (format && format[i])
 	{
 		if (format[i] == '%' && (format[i + 1] == ' '
-					 || format[i + 1] != '%'))
+			 || format[i + 1] != '%'))
 		{
 			if (format[i + 1] == ' ')
 			{
