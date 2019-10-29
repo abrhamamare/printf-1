@@ -22,5 +22,4 @@ int _putchar(char c);
 int op_character(va_list form);
 int op_string(va_list form);
 int op_integer(va_list form);
-
 #endif
