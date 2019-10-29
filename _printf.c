@@ -23,7 +23,7 @@ int validator(const char *format, va_list print1, MyPrint *ops1)
 				while (format[i + 1] == ' ')
 				i++;
 			}
-			while (j < 5)
+			while (j < 6)
 			{
 				if (ops1[j].op[0] == format[i + 1])
 				{
@@ -64,6 +64,7 @@ int _printf(const char *format, ...)
 		{"i", op_integer},
 		{"d", op_integer},
 		{"r", op_reverse},
+		{"R", op_rot13},
 	};
 
 	if (format == NULL)
