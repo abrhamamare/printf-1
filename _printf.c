@@ -1,42 +1,33 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdarg.h>
-#include <unistd.h>
 #include "holberton.h"
 
 /**
- * _printf - Function that produces output according to a format.
- * @format: Is a character string.
- * The format string is composed of zero or more directives.
- * Returns: the number of characters printed
- * (excluding the null byte used to end output to strings)
+ * validator - Function that produces output according to a format.
+ * @format: Pointer
+ * @print1: va_list
+ * @ops1: struct
+ * Return: Always 0
  */
-int _printf(const char *format, ...)
+int validator(const char *format, va_list print1, MyPrint *ops1)
 {
-	va_list print;
-	unsigned int i, j;
-	int count = 0;
+	int i = 0, j = 0, count = 0;
 
-	MyPrint ops[] = {
-		{"c", op_character},
-		{"s", op_string},
-		{"i", op_integer},
-		{"d", op_integer},
-	};
-	va_start(print, format);
-	i = 0;
-	if (format == NULL)
-		return (-1);
 	while (format && format[i])
 	{
-		j = 0;
-		if (format[i] == '%' && format[i + 1] != '%')
+		if (format[i] == '%' && (format[i + 1] == ' '
+			 || format[i + 1] != '%'))
 		{
+			if (format[i + 1] == ' ')
+			{
+				while (format[i + 1] == ' ')
+				i++;
+			}
 			while (j < 4)
 			{
-				if (ops[j].op[0] == format[i + 1])
+				if (ops1[j].op[0] == format[i + 1])
 				{
-					count += ops[j].f(print);
+					count += ops1[j].f(print1);
 					i++;
 					break;
 				} j++;
@@ -50,7 +41,34 @@ int _printf(const char *format, ...)
 		else
 		{
 			count += _putchar(format[i]);
-		} i++;
-	} va_end(print);
+		}
+		i++, j = 0;
+	}
+	return (count);
+}
+/**
+ * _printf - Function that produces output according to a format.
+ * @format: Pointer
+ * Return: Always 0
+ */
+
+int _printf(const char *format, ...)
+{
+	va_list print;
+	int count = 0;
+
+	MyPrint ops[] = {
+		{"c", op_character},
+		{"s", op_string},
+		{"i", op_integer},
+		{"d", op_integer},
+	};
+
+	if (format == NULL)
+		return (-1);
+	va_start(print, format);
+
+	count = validator(format, print, ops);
+	va_end(print);
 	return (count);
 }
