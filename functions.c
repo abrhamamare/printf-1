@@ -5,7 +5,7 @@
 
 /**
  * _putchar - prints given character
- * @c: character to print
+ * @c: character to print.
  *
  * Return: number of characters printed, -1 if error
  */

@@ -4,7 +4,7 @@
 
 /**
  * validator - Function that produces output according to a format.
- * @format: Pointer
+ * @format: Pointers
  * @print1: va_list
  * @ops1: struct
  * Return: Always 0
