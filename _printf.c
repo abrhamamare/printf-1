@@ -11,7 +11,6 @@
  */
 int validator(const char *format, va_list print1, MyPrint *ops1)
 {
-	int i = 0, j = 0, count = 0;
 
 	while (format && format[i])
 	{
