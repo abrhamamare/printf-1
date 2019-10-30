@@ -19,9 +19,6 @@ int op_rot13(va_list form)
 	char x[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ ";
 	char y[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM ";
 
-	if (s == NULL)
-		return (0);
-
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; x[j]; j++)
