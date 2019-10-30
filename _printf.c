@@ -16,7 +16,14 @@ int _printf(const char *format, ...)
 		{"c", op_c},
 		{"s", op_s},
 		{"d", op_d},
-		{"i", op_d}
+		{"i", op_d},
+		{"u", op_u},
+		{"o", op_o},
+		{"x", op_x},
+		{"X", op_X},
+		{"p", op_p},
+		{"r", op_r},
+		{"%", op_percent}
 	};
 	va_list al;
 	int x;
@@ -30,7 +37,7 @@ int _printf(const char *format, ...)
 		if (format[x] == '%')
 		{
 			y = 0;
-			while (y < 4)
+			while (y < 11)
 			{
 				if (opl[y].op[0] == format[x + 1])
 				{

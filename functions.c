@@ -91,3 +91,38 @@ int op_u(va_list al)
  */
 int op_o(va_list al)
 {}
+/**
+ * op_x - Unsigned hexadecima lowercase
+ * @al: argument list
+ * Return: Always lenght
+ */
+int op_x(va_list al)
+{}
+/**
+ * op_X - Unsigned hexadecima uppercase
+ * @al: argument list
+ * Return: Always lenght
+ */
+int op_X(va_list al)
+{}
+/**
+ * op_p - Address
+ * @al: argument list
+ * Return: Always lenght
+ */
+int op_p(va_list al)
+{}
+/**
+ * op_r - Unknown
+ * @al: argument list
+ * Return: Always lenght
+ */
+int op_r(va_list al)
+{}
+/**
+ * op_percent - Percent
+ * @al: argument list
+ * Return: Always lenght
+ */
+int op_percent(va_list al)
+{}

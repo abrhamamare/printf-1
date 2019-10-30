@@ -4,6 +4,14 @@ int _putchar(char c);
 int op_c(va_list al);
 int op_s(va_list al);
 int op_d(va_list al);
+int op_u(va_list al);
+int op_oq(va_list al);
+int op_x(va_list al);
+int op_X(va_list al);
+int op_p(va_list al);
+int op_r(va_list al);
+int op_percent(va_list al);
+
 int _printf(const char *format, ...);
 /**
  * struct op - Struct
