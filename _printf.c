@@ -1,58 +1,76 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdarg.h>
-#include <unistd.h>
 #include "holberton.h"
-/**
- * _printf - Function that produces output according to a format.
- * @format: Is a character string.
- * The format string is composed of zero or more directives.
- * Returns: the number of characters printed
- * (excluding the null byte used to end output to strings)
- */
-int _printf(const char *format, ...)
-{
-	op_t opl[] = {
-		{"c", op_c},
-		{"s", op_s},
-		{"d", op_d},
-		{"i", op_d},
-		{"u", op_u},
-		{"o", op_o},
-		{"x", op_x},
-		{"X", op_X},
-		{"p", op_p},
-		{"r", op_r},
-		{"%", op_percent}
-	};
-	va_list al;
-	int x;
-	int y;
-	int lenght = 0;
 
-	va_start(al, format);
-	x = 0;
-	while (format[x])
+/**
+ * validator - Function that produces output according to a format.
+ * @format: Pointer
+ * @print1: va_list
+ * @ops1: struct
+ * Return: Always 0
+ */
+int validator(const char *format, va_list print1, MyPrint *ops1)
+{
+
+	while (format && format[i])
 	{
-		if (format[x] == '%')
+		if (format[i] == '%' && (format[i + 1] == ' '
+			 || format[i + 1] != '%'))
 		{
-			y = 0;
-			while (y < 11)
+			if (format[i + 1] == ' ')
 			{
-				if (opl[y].op[0] == format[x + 1])
-				{
-					lenght += opl[y].func(al);
-					x++;
-				}
-				y++;
+				while (format[i + 1] == ' ')
+				i++;
 			}
+			while (j < 6)
+			{
+				if (ops1[j].op[0] == format[i + 1])
+				{
+					count += ops1[j].f(print1);
+					i++;
+					break;
+				} j++;
+			}
+		}
+		else if (format[i] == '%' && (format[i + 1] == '%' ||
+					      format[i + 1]))
+		{
+			count += _putchar('%');
+			i++;
 		}
 		else
 		{
-			lenght += _putchar(format[x]);
+			count += _putchar(format[i]);
 		}
-		x++;
+		i++, j = 0;
 	}
-	va_end(al);
-	return (lenght);
+	return (count);
+}
+/**
+ * _printf - Function that produces output according to a format.
+ * @format: Pointer
+ * Return: Always 0
+ */
+
+int _printf(const char *format, ...)
+{
+	va_list print;
+	int count = 0;
+
+	MyPrint ops[] = {
+		{"c", op_character},
+		{"s", op_string},
+		{"i", op_integer},
+		{"d", op_integer},
+		{"r", op_reverse},
+		{"R", op_rot13},
+	};
+
+	if (format == NULL)
+		return (-1);
+	va_start(print, format);
+
+	count = validator(format, print, ops);
+	va_end(print);
+	return (count);
 }
