@@ -10,26 +10,26 @@ FORMAT outputs a specified format relative to the specifier input.
 
 ![Alt](https://i.ytimg.com/vi/mZFdyoZhUb4/maxresdefault.jpg)
 
-`**%c** Writes a character`
+`__%c__ Writes a character`
 
-`**%s** Writes a string of characters`
+`__%s__ Writes a string of characters`
 
-`**%%** Displays a single '%' character`
+`__%%__ Displays a single '%' character`
 
-`**%d** Converts argument to signed decimal notation`
+`__%d__ Converts argument to signed decimal notation`
 
-`**%i** Converts argument to unsigned decimal notation`
+`__%i__ Converts argument to unsigned decimal notation`
 
-`**%b** Number in binary form`
+`__%b__ Number in binary form`
 
-`**%x** Number in lowercase hexadecimal form`
+`__%x__ Number in lowercase hexadecimal form`
 
-`**%X** Number in uppercase hexadecimal form`
+`__%X__ Number in uppercase hexadecimal form`
 
-`**%o** Number in octal form`
+`__%o__ Number in octal form`
 
-`**%S** Presents inputted strings in hexadecimal form`
+`__%S__ Presents inputted strings in hexadecimal form`
 
-`**%r** Writes a string of characters in reverse`
+`__%r__ Writes a string of characters in reverse`
 
-`**%R** Converts inputted string in 'rot13' substitution form`
+`__%R__ Converts inputted string in 'rot13' substitution form`
