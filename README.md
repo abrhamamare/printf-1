@@ -1,35 +1,23 @@
-# PRINTF
+# Custom printf (Learning Copy)
 
-> ##  Projects JUAN and JAVIER
+A C formatted-output implementation containing `_printf.c`, helper functions, a header, and a manual page.
 
+## Technologies and topics
 
-We build to printf function receive user input and prints to the standard output
+C, variadic functions, output formatting.
 
+## Getting started
 
-FORMAT outputs a specified format relative to the specifier input.
+Inspect `holberton.h` for the function interface and compile the implementation with a test driver.
 
-![Alt](https://i.ytimg.com/vi/mZFdyoZhUb4/maxresdefault.jpg)
+## Repository organization
 
-`__%c__ Writes a character`
+Browse the source files and topic directories for individual examples. Some exercises are standalone and should not be compiled together.
 
-`__%s__ Writes a string of characters`
+## Technical interview discussion
 
-`__%%__ Displays a single '%' character`
+Format parsing, unsupported specifiers, null pointers, and return-value handling.
 
-`__%d__ Converts argument to signed decimal notation`
+## Scope
 
-`__%i__ Converts argument to unsigned decimal notation`
-
-`__%b__ Number in binary form`
-
-`__%x__ Number in lowercase hexadecimal form`
-
-`__%X__ Number in uppercase hexadecimal form`
-
-`__%o__ Number in octal form`
-
-`__%S__ Presents inputted strings in hexadecimal form`
-
-`__%r__ Writes a string of characters in reverse`
-
-`__%R__ Converts inputted string in 'rot13' substitution form`
+Educational coursework and practice code. This repository is not claimed to be production-ready or security-audited.
